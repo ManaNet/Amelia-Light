@@ -32,13 +32,13 @@ open a terminal and execute the command: `composer install` and wait for it to i
 
 After all the dependencies are installed, head to your `NGINX` config (Ubuntu: `/etc/nginx/sites_enabled/{site}.conf`) and add these two:
 ```conf
-	location / {
-    		try_files $uri $uri/ /index.php?$query_string;
-	}
+location / {
+    	try_files $uri $uri/ /index.php?$query_string;
+}
 
-	location ~* \.(git|env)$ {
-    		deny all;
-	}
+location ~* \.(git|env)$ {
+    	deny all;
+}
 
 ```
 
