@@ -6,6 +6,7 @@ import pw.mihou.amelia.db.FeedManager;
 import pw.mihou.amelia.io.ReadRSS;
 import pw.mihou.amelia.io.Scheduler;
 import pw.mihou.amelia.payloads.AmeliaPayload;
+import pw.mihou.amelia.wrappers.AmatsukiWrapper;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -18,6 +19,16 @@ public class Feeds {
                 Scheduler.schedule(() -> ReadRSS.getLatest(feedModel.getFeedURL()).ifPresentOrElse(item ->
                         item.getPubDate().ifPresent(date -> {
                             if (date.after(feedModel.getDate())) {
+                                // Validate that the server indeed returns back an author name.
+                                // or else we'll fetch it ourselves.
+                                if(item.getAuthor().isBlank() || item.getAuthor().isEmpty()) {
+                                    if(feedModel.getFeedURL().contains("sid=")) {
+                                        item.setAuthor(AmatsukiWrapper.getStoryById(Integer.parseInt(feedModel
+                                                .getFeedURL()
+                                                .substring(feedModel.getFeedURL()
+                                                .lastIndexOf("id=") + 3))).getCreator());
+                                    }
+                                }
                                 AmeliaServer.sendPayload(new AmeliaPayload(item, feedModel.setPublishedDate(date)));
                                 Amelia.log.info("All nodes were notified for feed [{}].", feedModel.getUnique());
                             }

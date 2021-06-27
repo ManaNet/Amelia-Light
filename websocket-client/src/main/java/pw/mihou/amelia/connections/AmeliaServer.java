@@ -35,7 +35,9 @@ public class AmeliaServer {
                     .data("webhook", payload.model.getWebhook())
                     .data("title", payload.wrapper.getTitle())
                     .data("author", payload.wrapper.getAuthor())
-                    .data("link", payload.wrapper.getLink()).execute();
+                    .data("link", payload.wrapper.getLink())
+                    .method(Connection.Method.POST)
+                    .execute();
 
             if (response.statusCode() != 204) {
                 Amelia.log.error("An error occurred while trying to send payload for feed {} with webhook {}, received {} from server: {}",

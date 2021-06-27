@@ -46,6 +46,10 @@ public class ItemWrapper {
         return link != null && title != null && !link.isEmpty() && !link.isBlank() && !title.isEmpty() && !title.isBlank();
     }
 
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
     public String getLink() {
         return link;
     }
