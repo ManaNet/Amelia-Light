@@ -1,0 +1,155 @@
+:root {
+    color: white;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #1A1A1A;
+    background: linear-gradient(180deg, rgba(253, 255, 131, 0.2) 0%, rgba(0, 0, 0, 0.8) 90%), url(https://cdn.discordapp.com/avatars/786464598835986483/8175d0e1793e99b786032be669537a4c.png?size=4096) 1%, #1A1A1A;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.header {
+    display: flex;
+    flex-direction: row;
+    padding: 20px, 5px;
+}
+
+.text-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.Amelia-Icon {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding-right: 10px;
+}
+
+.hero-text {
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 0px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 0px;
+    margin-top: 10px;
+}
+
+.form {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-40%);
+}
+
+.form h2 {
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+}
+
+.form-question {
+    padding-top: 0px;
+    margin-bottom: 20px;
+}
+
+.form-question i {
+    font-size: 16px;
+    padding-top: 0px;
+}
+
+.form-question p {
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.form-question input {
+    margin-top: 0px;
+    color: white;
+    height: 45px;
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: light;
+    font-size: 12px;
+    padding: 10px;
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid #4eaaaf;
+    box-sizing: border-box;
+    border-radius: 4px;
+    transition-duration: 0.6s;
+}
+
+@media screen and (min-width: 768px) {
+    .form-question input {
+        width: 727px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .form-question input {
+        width: 90vw;
+    }
+}
+
+.form-question input:hover {
+    border: 1px solid #95F9FF;
+    transform: scale(1.02);
+}
+
+.button {
+    padding: 12px 60px;
+    text-decoration: none;
+    color: white;
+    background: rgba(26, 26, 26, 0.9);
+    border: 1px solid #4eaaaf;
+    box-sizing: border-box;
+    border-radius: 4px;
+    transition-duration: 0.6s;
+}
+
+.button:hover {
+    border: 1px solid #92E5FF;
+    background-color: #92E5FF;
+}
+
+.love {
+    position: absolute;
+    bottom: 0;
+}
+
+.love .fa-heart {
+    color: #FE6F6F;
+    padding-right: 5px;
+}
