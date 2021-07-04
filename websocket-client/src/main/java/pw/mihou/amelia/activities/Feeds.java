@@ -27,9 +27,9 @@ public class Feeds {
                                                 .getFeedURL()
                                                 .substring(feedModel.getFeedURL()
                                                 .lastIndexOf("id=") + 3))).getCreator());
+                                        AmeliaServer.sendPayload(new AmeliaPayload(item, feedModel.setPublishedDate(date)));
                                     }
                                 }
-                                AmeliaServer.sendPayload(new AmeliaPayload(item, feedModel.setPublishedDate(date)));
                                 Amelia.log.info("All nodes were notified for feed [{}].", feedModel.getUnique());
                             }
                         }), () -> Amelia.log.error("We couldn't find any results for {}.", feedModel.getFeedURL())), bucket.addAndGet(2), TimeUnit.SECONDS))).exceptionally(throwable -> {
